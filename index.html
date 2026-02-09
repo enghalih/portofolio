@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galih's portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="./public/script.js" defer></script>
+    <link rel="stylesheet" href="public/style.css" />
+  </head>
+  <body class="portfolio">
+    <header class="header">
+      <nav class="header__nav" aria-label="Navigasi Utama">
+        <a href="/" class="header__logo" aria-label="Halaman Utama Adam Keyes"
+          >adamkeyyes</a
+        >
+        <ul class="header__social-list">
+          <li>
+            <a href="#" aria-label="Kunjungi Profil GitHub"
+              ><img
+                src="./assets/images/icon-github.svg"
+                alt=""
+                aria-hidden="true"
+            /></a>
+          </li>
+          <li>
+            <a href="#" aria-label="Kunjungi Profil Frontend Mentor"
+              ><img
+                src="./assets/images/icon-frontend-mentor.svg"
+                alt=""
+                aria-hidden="true"
+            /></a>
+          </li>
+          <li>
+            <a href="#" aria-label="Kunjungi Profil LinkedIn"
+              ><img
+                src="./assets/images/icon-linkedin.svg"
+                alt=""
+                aria-hidden="true"
+            /></a>
+          </li>
+          <li>
+            <a href="#" aria-label="Kunjungi Profil Twitter"
+              ><img
+                src="./assets/images/icon-twitter.svg"
+                alt=""
+                aria-hidden="true"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <picture class="hero__image">
+          <source
+            srcset="./assets/images/image-profile-desktop.webp"
+            media="(min-width: 1024px)"
+          />
+          <source
+            srcset="./assets/images/image-profile-tablet.webp"
+            media="(min-width: 768px)"
+          />
+          <img
+            src="./assets/images/image-profile-mobile.webp"
+            alt="Foto Adam Keyes tersenyum"
+          />
+        </picture>
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__heading">
+            Senang bertemu Anda! Saya
+            <span class="hero__heading--highlight">Adam Keyes.</span>
+          </h1>
+          <p class="hero__description">
+            Berbasis di Inggris, saya adalah pengembang front-end yang
+            bersemangat membangun aplikasi web yang dapat diakses dan dicintai
+            pengguna.
+          </p>
+          <a href="#contact" class="btn-link">Hubungi Saya</a>
+        </div>
+      </section>
+
+      <hr class="separator" />
+
+      <section class="skills" aria-label="Keahlian Saya">
+        <ul class="skills__grid">
+          <li class="skills__item">
+            <h2 class="skills__title">HTML</h2>
+            <p class="skills__exp">Pengalaman 4 Tahun</p>
+          </li>
+          <li class="skills__item">
+            <h2 class="skills__title">CSS</h2>
+            <p class="skills__exp">Pengalaman 4 Tahun</p>
+          </li>
+        </ul>
+      </section>
+
+      <hr class="separator" />
+
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="projects__header">
+          <h2 id="projects-title" class="projects__heading">Proyek</h2>
+          <a href="#contact" class="btn-link">Hubungi Saya</a>
+        </div>
+
+        <div class="projects__grid">
+          <article class="project-card">
+            <div class="project-card__image-container">
+              <img
+                src="./assets/images/thumbnail-project-1-small.webp"
+                alt="Tampilan antarmuka Design Portfolio"
+                class="project-card__img"
+              />
+            </div>
+            <div class="project-card__header">
+              <h3 class="project-card__title">Design Portfolio</h3>
+              <ul
+                class="project-card__tags"
+                aria-label="Teknologi yang digunakan"
+              >
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+            </div>
+            <div class="project-card__mobile-links">
+              <a href="#" class="btn-link">Lihat Proyek</a>
+              <a href="#" class="btn-link">Lihat Kode</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- <section id="contact" class="contact" aria-labelledby="contact-title">
+        <div class="contact__content">
+          <h2 id="contact-title" class="contact__heading">Kontak</h2>
+          <p class="contact__description">
+            Saya ingin mendengar tentang proyek Anda dan bagaimana saya bisa
+            membantu. Silakan isi formulir, dan saya akan menghubungi Anda
+            sesegera mungkin.
+          </p>
+        </div>
+
+        <form class="contact__form" action="#" method="POST">
+          <div class="contact__field">
+            <label for="name" class="sr-only">Nama</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="NAMA"
+              required
+              aria-required="true"
+            />
+          </div>
+
+          <div class="contact__field contact__field--error">
+            <label for="email" class="sr-only">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="EMAIL"
+              required
+              aria-invalid="true"
+              aria-describedby="email-error"
+            />
+            <span id="email-error" class="contact__error-msg"
+              >Maaf, format format salah</span
+            >
+            <img src="icon-error.svg" alt="" class="contact__error-icon" />
+          </div>
+
+          <div class="contact__field">
+            <label for="message" class="sr-only">Pesan</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="PESAN"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-link btn-link--submit">
+            Kirim Pesan
+          </button>
+        </form>
+      </section> -->
+    </main>
+
+    <footer class="footer">
+      <nav class="footer__nav" aria-label="Navigasi Kaki">
+        <a href="/" class="footer__logo">adamkeyes</a>
+      </nav>
+    </footer>
+  </body>
+</html>

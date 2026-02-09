@@ -1,0 +1,189 @@
+@use "abstract" as *;
+@use "base";
+
+.btn-link {
+  @include button-style;
+  font:
+    700 1.6rem / 2.6rem "Space Grotesk",
+    sans-serif;
+  letter-spacing: 0.3rem;
+}
+
+.header {
+  @include wrapper;
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  transform: translateX(-50%);
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__logo {
+    @include heading-m;
+    color: $color-white;
+    text-decoration: none;
+  }
+  &__social-list {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 2.4rem;
+  }
+}
+
+.main {
+  @include wrapper;
+}
+
+.hero {
+  display: grid;
+  gap: 4rem;
+  padding-bottom: 9rem;
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__logo {
+    @include heading-m;
+    @include tablet {
+      font-size: 3.2rem;
+    }
+  }
+
+  &__heading {
+    @include heading-xl;
+  }
+
+  &__description {
+    @include body-l;
+    @include tablet {
+      padding-bottom: 6.6rem;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+    @include tablet {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      text-align: start;
+      align-items: flex-start;
+      padding-top: clamp(15rem, calc(13.182rem + 5.682vw), 20rem);
+      gap: 4rem;
+    }
+  }
+
+  &__image img {
+    width: 50%;
+    margin-inline: auto;
+    @include tablet {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  &__image {
+    @include tablet {
+      grid-column: 2/3;
+    }
+  }
+}
+
+.skills {
+  padding-block: clamp(4rem, calc(2.836rem + 3.636vw), 7.2rem);
+  &__grid {
+    display: grid;
+    gap: 2.4rem;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__title {
+    @include heading-l;
+  }
+
+  &__exp {
+    @include body-l;
+  }
+}
+
+.projects {
+  padding-block: 8rem;
+  display: grid;
+  gap: clamp(4rem, calc(2.545rem + 4.545vw), 8rem);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__heading {
+    @include heading-xl;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 4rem;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 2.2rem;
+      column-gap: 6.5rem;
+    }
+  }
+}
+
+.project-card {
+  display: grid;
+  gap: 2rem;
+
+  &__header {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  &__tags {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1.8rem;
+    @include body-l;
+  }
+
+  &__mobile-links {
+    display: flex;
+    gap: 3.2rem;
+  }
+
+  &__title {
+    @include heading-m;
+  }
+}
+
+.contact {
+  background-color: $color-dark-grey;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: $color-dark-grey;
+  &__logo {
+    @extend .header__logo;
+  }
+}
