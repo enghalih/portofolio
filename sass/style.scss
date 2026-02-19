@@ -166,6 +166,32 @@
   display: grid;
   gap: 2rem;
 
+  &__image-container {
+    position: relative;
+  }
+
+  &__overlay {
+    display: none;
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.4rem;
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  &:hover &__overlay {
+    @include desktop {
+      opacity: 1;
+    }
+  }
+
   &__header {
     display: grid;
     gap: 0.8rem;
@@ -182,6 +208,9 @@
   &__mobile-links {
     display: flex;
     gap: 3.2rem;
+    @include desktop {
+      display: none;
+    }
   }
 
   &__title {
@@ -191,12 +220,56 @@
 
 .contact {
   background-color: $color-dark-grey;
+  padding-block: 8rem;
+
+  &__wrapper {
+    @include wrapper;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: start;
+    }
+  }
+
+  &__content {
+    max-width: 44.5rem;
+  }
+
+  &__heading {
+    @include heading-xl;
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    @include body-l;
+  }
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
   background-color: $color-dark-grey;
+  padding-block: 4rem;
+
+  &__nav {
+    @include wrapper;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 4rem;
+    border-top: 1px solid $color-light-grey;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
   &__logo {
     @extend .header__logo;
   }

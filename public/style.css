@@ -98,7 +98,9 @@ h6 {
   color: #4ee1a0;
 }
 .btn-link {
-  font: 700 1.6rem/2.6rem "Space Grotesk", sans-serif;
+  font:
+    700 1.6rem/2.6rem "Space Grotesk",
+    sans-serif;
   letter-spacing: 0.3rem;
 }
 
@@ -123,7 +125,8 @@ h6 {
     justify-content: space-between;
   }
 }
-.header__logo, .footer__logo {
+.header__logo,
+.footer__logo {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   font-size: 2.4rem;
@@ -319,15 +322,93 @@ h6 {
   font-size: 2.4rem;
   line-height: 1.33;
 }
+.project-card__image-container {
+  position: relative;
+}
+.project-card__overlay {
+  display: none;
+}
+@media screen and (min-width: 75rem) {
+  .project-card__overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.4rem;
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .project-card:hover .project-card__overlay {
+    opacity: 1;
+  }
+  .project-card__mobile-links {
+    display: none;
+  }
+}
 
 .contact {
   background-color: #242424;
+  padding-block: 8rem;
+}
+.contact__wrapper {
+  width: 90%;
+  max-width: 110rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4rem;
+}
+@media screen and (min-width: 48rem) {
+  .contact__wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: start;
+  }
+}
+.contact__content {
+  max-width: 44.5rem;
+}
+.contact__heading {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: clamp(4rem, 2.255rem + 5.455vw, 8.8rem);
+  line-height: 1;
+  letter-spacing: -0.25rem;
+  margin-bottom: 2rem;
+}
+.contact__description {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 1.527rem + 0.227vw, 1.8rem);
+  line-height: 1.55;
+  color: #d9d9d9;
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
   background-color: #242424;
+  padding-block: 4rem;
+}
+.footer__nav {
+  width: 90%;
+  max-width: 110rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 4rem;
+  border-top: 1px solid #d9d9d9;
+}
+@media screen and (min-width: 48rem) {
+  .footer__nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
